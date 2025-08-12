@@ -1,0 +1,72 @@
+.landing-container {
+  color: white;
+  background: #b47634;
+  border-radius: 20px;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.25rem 0;
+}
+
+.banner-heading {
+  width: 26rem;
+  font-size: 2.675rem;
+  letter-spacing: -2px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.banner-image {
+  height: 375px;
+  width: 100%;
+}
+
+.hero-buttons {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background: black;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: white;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+}
+
+.info-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  border-radius: 1rem;
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.personal-plan {
+  text-align: center;
+  padding: 3rem 1rem;
+}

@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("../fonts/Sofia Pro Black Az.woff2") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("../fonts/Sofia Pro Bold Az.woff2") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("../fonts/Sofia Pro Semi Bold Az.woff2") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("../fonts/Sofia Pro Medium Az.woff2") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("../fonts/Sofia Pro Regular Az.woff2") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("../fonts/Sofia Pro Light Az.woff2") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("../fonts/Sofia Pro ExtraLight Az.woff2") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("../fonts/Sofia Pro UltraLight Az.woff2") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
