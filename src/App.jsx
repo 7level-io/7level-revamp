@@ -19,7 +19,7 @@ function App() {
             element={<HomePage />}
           />
 
-          <Route path="/karo-hardware" element={<KaroHardwarePage />} />
+          <Route path="/7level-revamp/karo-hardware" element={<KaroHardwarePage />} />
           {/* <Route path="/regrow-hair" element={<RegrowHair />} />
           <Route path="/last-longer" element={<LastLonger />} />
           <Route path="/better-sex" element={<BetterSex />} />
