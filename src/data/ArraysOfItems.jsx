@@ -28,7 +28,7 @@ export const homeItems = [
     gradient: "127deg, rgb(119, 29, 23) 12.55%, rgb(185, 68, 59) 84.61%",
     img: regrowHair,
     imgHover: regrowHairHover,
-    path: "/karo-hardware",
+    path: "/7level-revamp/karo-hardware",
   },
   {
     text: "Navkar",
@@ -76,7 +76,7 @@ export const karoHardwareItems = [
     gradient: "127deg, rgb(186, 118, 32) 12.55%, rgb(236, 193, 92) 84.61%",
     img: weightLoss,
     imgHover: weightLossHover,
-    path: "/karo-hardware",
+    path: "/7level-revamp/karo-hardware",
   },
   {
     text: "Iron",
@@ -85,7 +85,7 @@ export const karoHardwareItems = [
     gradient: "127deg, rgb(119, 29, 23) 12.55%, rgb(185, 68, 59) 84.61%",
     img: regrowHair,
     imgHover: regrowHairHover,
-    path: "/karo-hardware",
+    path: "/7level-revamp/karo-hardware",
   },
   {
     text: "Gypsum",
@@ -94,7 +94,7 @@ export const karoHardwareItems = [
     gradient: "127deg, rgb(72, 50, 139) 12.55%, rgb(134, 94, 255) 84.61%",
     img: lastLonger,
     imgHover: lastLongerHover,
-    path: "/karo-hardware",
+    path: "/7level-revamp/karo-hardware",
   },
   {
     text: "PVC",
@@ -103,7 +103,7 @@ export const karoHardwareItems = [
     img: betterSex,
     imgHover: betterSexHover,
     gradient: "127deg, rgb(78, 121, 158) 12.55%, rgb(124, 184, 235) 84.61%",
-    path: "/karo-hardware",
+    path: "/7level-revamp/karo-hardware",
   },
   {
     text: "Metal",
@@ -112,7 +112,7 @@ export const karoHardwareItems = [
     gradient: "127deg, rgb(0, 119, 78) 12.55%, rgb(0, 167, 110) 84.61%",
     img: tackleAnxiety,
     imgHover: tackleAnxietyHover,
-    path: "/karo-hardware",
+    path: "/7level-revamp/karo-hardware",
   },
   {
     text: "Aluminium",
@@ -121,6 +121,6 @@ export const karoHardwareItems = [
     gradient: "127deg, rgb(172, 119, 88) 12.55%, rgb(255, 188, 148) 84.61%",
     img: smootherSkin,
     imgHover: smootherSkinHover,
-    path: "/karo-hardware",
+    path: "/7level-revamp/karo-hardware",
   },
 ];
