@@ -15,7 +15,7 @@ function App() {
         <TopNavbar />
         <Routes>
           <Route
-            path="/"
+            path="/7level-revamp"
             element={<HomePage />}
           />
 
