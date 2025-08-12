@@ -41,7 +41,7 @@ export default function TopNavbar() {
   }, []);
 
   const getPageLabel = (pathname) => {
-    if (pathname === "/") return "";
+    if (pathname === "/7level-revamp/") return "";
     const label = pathname
       .split("/")
       .filter(Boolean)
