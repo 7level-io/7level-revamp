@@ -9,24 +9,28 @@ import HomePage from "./pages/HomePage";
 import KaroHardwarePage from "./pages/KaroHardwarePage";
 
 function App() {
-  return (
-      <Router>
-        <BannerMarquee />
-        <TopNavbar />
-        <Routes>
-          <Route
-            path="/7level-revamp"
-            element={<HomePage />}
-          />
+  const host = window.location.hostname;
 
-          <Route path="/7level-revamp/karo-hardware" element={<KaroHardwarePage />} />
-          {/* <Route path="/regrow-hair" element={<RegrowHair />} />
+  return (
+    <Router>
+      <BannerMarquee />
+      <TopNavbar />
+      <Routes>
+        {host === "7level.in" && <Route path="/" element={<HomePage />} />}
+
+        {host.startsWith("navkar.metal.") && (
+          <Route path="/" element={<KaroHardwarePage />} />
+        )}
+
+        <Route path="*" element={<NotFound />} />
+
+        {/* <Route path="/regrow-hair" element={<RegrowHair />} />
           <Route path="/last-longer" element={<LastLonger />} />
           <Route path="/better-sex" element={<BetterSex />} />
           <Route path="/tackle-anxiety" element={<TackleAnxiety />} />
           <Route path="/smoother-skin" element={<SmootherSkin />} /> */}
-        </Routes>
-      </Router>
+      </Routes>
+    </Router>
   );
 }
 
