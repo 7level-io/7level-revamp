@@ -10,19 +10,15 @@ import KaroHardwarePage from "./pages/KaroHardwarePage";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  const host = window.location.hostname;
+  // const host = window.location.hostname;
 
   return (
     <Router>
       <BannerMarquee />
       <TopNavbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-
-        {host.startsWith("navkar.metal.") && (
-          <Route path="/" element={<KaroHardwarePage />} />
-        )}
-
+        {/* <Route path="/" element={<HomePage />} /> */}
+        <Route path="/" element={<KaroHardwarePage />} />
         <Route path="*" element={<NotFound />} />
 
         {/* <Route path="/regrow-hair" element={<RegrowHair />} />
