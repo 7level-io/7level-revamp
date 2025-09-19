@@ -7,6 +7,7 @@ import BannerMarquee from "./components/BannerMarquee";
 import TopNavbar from "./components/TopNavbar";
 import HomePage from "./pages/HomePage";
 import KaroHardwarePage from "./pages/KaroHardwarePage";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const host = window.location.hostname;
