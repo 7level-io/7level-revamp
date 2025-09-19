@@ -17,7 +17,7 @@ function App() {
       <BannerMarquee />
       <TopNavbar />
       <Routes>
-        {host === "7level.in" && <Route path="/" element={<HomePage />} />}
+        <Route path="/" element={<HomePage />} />
 
         {host.startsWith("navkar.metal.") && (
           <Route path="/" element={<KaroHardwarePage />} />
