@@ -1,6 +1,6 @@
 {
-  "name": "7level-revamp",
-  "homepage": "https://imadajerry.github.io/7level-revamp/",
+  "name": "7level",
+  "homepage": "https://7level.in",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -24,6 +24,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
+    "cpy-cli": "^6.0.0",
     "eslint": "^9.30.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
