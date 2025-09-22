@@ -37,7 +37,7 @@ export const homeItems = [
     gradient: "127deg, rgb(72, 50, 139) 12.55%, rgb(134, 94, 255) 84.61%",
     img: lastLonger,
     imgHover: lastLongerHover,
-    path: "https://navkar.metal.7level.in/",
+    path: "https://navkarmetal.7level.in/",
   },
   {
     text: "LRN",

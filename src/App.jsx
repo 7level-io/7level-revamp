@@ -17,8 +17,8 @@ function App() {
       <BannerMarquee />
       <TopNavbar />
       <Routes>
-        {/* <Route path="/" element={<HomePage />} /> */}
-        <Route path="/" element={<KaroHardwarePage />} />
+        <Route path="/" element={<HomePage />} />
+        {/* <Route path="/" element={<KaroHardwarePage />} /> */}
         <Route path="*" element={<NotFound />} />
 
         {/* <Route path="/regrow-hair" element={<RegrowHair />} />
