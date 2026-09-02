@@ -10,7 +10,6 @@ const HomePage = () => {
       <section data-navbar-color="brown">
         <WellnessGrid items={homeItems} />
       </section>
-      <LandingSection />
     </>
   );
 };
