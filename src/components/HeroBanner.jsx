@@ -90,7 +90,7 @@ export default function HeroBanner() {
         </div>
         <span className="sub-heading">ready to assist</span>
       </h2>
-      <p className="subtitle">Explore our organizations below.</p>
+      <p className="subtitle">Explore our organizations below:</p>
     </section>
   );
 }

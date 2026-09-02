@@ -5,6 +5,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import BannerMarquee from "./components/BannerMarquee";
 import TopNavbar from "./components/TopNavbar";
+import DevelopmentPage from "./pages/DevelopmentPage";
 import HomePage from "./pages/HomePage";
 import KaroHardwarePage from "./pages/KaroHardwarePage";
 import NotFound from "./pages/NotFound";
@@ -18,6 +19,7 @@ function App() {
       <TopNavbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/:brand" element={<DevelopmentPage />} />
         {/* <Route path="/" element={<KaroHardwarePage />} /> */}
         <Route path="*" element={<NotFound />} />
 

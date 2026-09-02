@@ -42,6 +42,7 @@ export default function TopNavbar() {
 
   const getPageLabel = (pathname) => {
     if (pathname === "/") return "";
+    if (pathname === "/7level-io") return " - IO";
     const label = pathname
       .split("/")
       .filter(Boolean)

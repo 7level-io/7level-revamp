@@ -1,0 +1,47 @@
+.development-page {
+  min-height: calc(100vh - 4.25rem);
+  background: #faf8f2;
+  display: grid;
+  place-items: center;
+  padding: 4rem 1.625rem;
+}
+
+.development-message {
+  width: min(100%, 87rem);
+  text-align: center;
+}
+
+.development-eyebrow {
+  color: #58799e;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+
+.development-message h1 {
+  color: #222;
+  font-size: clamp(2.75rem, 8vw, 7rem);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+  margin: 0 auto;
+  max-width: 12ch;
+}
+
+@media only screen and (max-width: 40rem) {
+  .development-page {
+    min-height: calc(100vh - 3.25rem);
+    padding: 2rem 1rem;
+  }
+
+  .development-eyebrow {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .development-message h1 {
+    font-size: clamp(2.5rem, 13vw, 4rem);
+  }
+}

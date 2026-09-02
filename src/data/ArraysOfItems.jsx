@@ -18,19 +18,12 @@ import smootherSkinHover from "../assets/imgs/Placeholder_Smoother_Skin_Rollover
 
 export const homeItems = [
   {
-    text: "7",
-    highlight: "Level",
-    color: "#2840e8",
-    gradient: "127deg, rgb(26, 40, 194) 12.55%, rgb(70, 91, 255) 84.61%",
-    img: sevenLevelLogo,
-    path: "https://7level.in",
-  },
-  {
     text: "Speed",
     highlight: "X",
     color: "#8bb51f",
     gradient: "127deg, rgb(91, 125, 15) 12.55%, rgb(192, 239, 45) 84.61%",
     img: speedxLogo,
+    logoClass: "logo-dark",
     path: "https://speedxrental.7level.in",
   },
   {
@@ -43,20 +36,29 @@ export const homeItems = [
     path: "https://navkarmetals.7level.in/",
   },
   {
-    text: "LRN",
-    highlight: " Studio",
-    color: "#58799e",
-    img: lrnLogo,
-    gradient: "127deg, rgb(78, 121, 158) 12.55%, rgb(124, 184, 235) 84.61%",
-    path: "/lrn-studio",
-  },
-  {
     text: "GreenRocket",
     highlight: " TV",
     color: "#00a775",
     gradient: "127deg, rgb(0, 119, 78) 12.55%, rgb(0, 167, 110) 84.61%",
     img: greenRocketLogo,
     path: "https://greenrockettv.com/",
+  },
+  {
+    text: "LRN",
+    highlight: " Studio",
+    color: "#58799e",
+    img: lrnLogo,
+    logoClass: "logo-dark",
+    gradient: "127deg, rgb(78, 121, 158) 12.55%, rgb(124, 184, 235) 84.61%",
+    path: "/lrn-studio",
+  },
+  {
+    text: "7level",
+    highlight: "-io",
+    color: "#2840e8",
+    gradient: "127deg, rgb(26, 40, 194) 12.55%, rgb(70, 91, 255) 84.61%",
+    img: sevenLevelLogo,
+    path: "/7level-io",
   },
 ];
 

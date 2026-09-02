@@ -1,5 +1,4 @@
 import HeroBanner from "../components/HeroBanner";
-import LandingSection from "../components/LandingSection";
 import WellnessGrid from "../components/WellnessGrid";
 import { homeItems } from "../data/ArraysOfItems";
 
