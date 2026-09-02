@@ -39,6 +39,7 @@ export const homeItems = [
     color: "#7a58db",
     gradient: "127deg, rgb(72, 50, 139) 12.55%, rgb(134, 94, 255) 84.61%",
     img: navkarLogo,
+    logoClass: "logo-navkar",
     path: "https://navkarmetals.7level.in/",
   },
   {

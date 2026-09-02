@@ -80,6 +80,11 @@
   object-fit: contain;
 }
 
+.logo-frame.logo-navkar img {
+  max-width: 72%;
+  max-height: 72%;
+}
+
 .wellness-card:hover .logo-frame {
   background-color: rgba(250, 248, 242, 0.92);
 }

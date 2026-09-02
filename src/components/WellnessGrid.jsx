@@ -21,7 +21,7 @@ export default function WellnessGrid({ items }) {
               <span>{item.highlight}</span>
             </div>
             <div className="card-rhs">
-              <div className="logo-frame">
+              <div className={`logo-frame ${item.logoClass || ""}`}>
                 <img src={item.img} alt={`${item.text}${item.highlight}`} />
               </div>
               <div className="arrow">
