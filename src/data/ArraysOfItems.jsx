@@ -1,3 +1,8 @@
+import sevenLevelLogo from "../assets/imgs/logos/7level_logo.webp";
+import speedxLogo from "../assets/imgs/logos/speedx_logo.png";
+import navkarLogo from "../assets/imgs/logos/navkar-metal_logo.svg";
+import lrnLogo from "../assets/imgs/logos/lrn-studio_logo.jpeg";
+import greenRocketLogo from "../assets/imgs/logos/greenrockettv_logo.png";
 import weightLoss from "../assets/imgs/Placeholder_Weight_Loss_Offering_Default.png";
 import weightLossHover from "../assets/imgs/Placeholder_Weight_Loss_Offering_Rollover.png";
 import regrowHair from "../assets/imgs/Placeholder_Regrow_Hair_Default.png";
@@ -13,58 +18,44 @@ import smootherSkinHover from "../assets/imgs/Placeholder_Smoother_Skin_Rollover
 
 export const homeItems = [
   {
-    text: "Neu",
+    text: "7",
     highlight: "Level",
-    color: "#c18049",
-    gradient: "127deg, rgb(186, 118, 32) 12.55%, rgb(236, 193, 92) 84.61%",
-    img: weightLoss,
-    imgHover: weightLossHover,
-    path: "/neulevel",
+    color: "#2840e8",
+    gradient: "127deg, rgb(26, 40, 194) 12.55%, rgb(70, 91, 255) 84.61%",
+    img: sevenLevelLogo,
+    path: "https://7level.in",
   },
   {
-    text: "Karo",
-    highlight: " Hardware",
-    color: "#8b3d3d",
-    gradient: "127deg, rgb(119, 29, 23) 12.55%, rgb(185, 68, 59) 84.61%",
-    img: regrowHair,
-    imgHover: regrowHairHover,
-    path: "/7level-revamp/karo-hardware",
+    text: "Speed",
+    highlight: "X",
+    color: "#8bb51f",
+    gradient: "127deg, rgb(91, 125, 15) 12.55%, rgb(192, 239, 45) 84.61%",
+    img: speedxLogo,
+    path: "https://speedxrental.7level.in",
   },
   {
     text: "Navkar",
     highlight: " Metal",
     color: "#7a58db",
     gradient: "127deg, rgb(72, 50, 139) 12.55%, rgb(134, 94, 255) 84.61%",
-    img: lastLonger,
-    imgHover: lastLongerHover,
-    path: "https://navkarmetal.7level.in/",
+    img: navkarLogo,
+    path: "https://navkarmetals.7level.in/",
   },
   {
     text: "LRN",
     highlight: " Studio",
     color: "#58799e",
-    img: betterSex,
-    imgHover: betterSexHover,
+    img: lrnLogo,
     gradient: "127deg, rgb(78, 121, 158) 12.55%, rgb(124, 184, 235) 84.61%",
     path: "/lrn-studio",
   },
   {
-    text: "Hralh",
-    highlight: "Zo",
+    text: "GreenRocket",
+    highlight: " TV",
     color: "#00a775",
     gradient: "127deg, rgb(0, 119, 78) 12.55%, rgb(0, 167, 110) 84.61%",
-    img: tackleAnxiety,
-    imgHover: tackleAnxietyHover,
-    path: "/hralhzo",
-  },
-  {
-    text: "Re",
-    highlight: "Neu",
-    color: "#d0926a",
-    gradient: "127deg, rgb(172, 119, 88) 12.55%, rgb(255, 188, 148) 84.61%",
-    img: smootherSkin,
-    imgHover: smootherSkinHover,
-    path: "/reneu",
+    img: greenRocketLogo,
+    path: "https://greenrockettv.com/",
   },
 ];
 

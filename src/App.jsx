@@ -14,7 +14,7 @@ function App() {
 
   return (
     <Router>
-      <BannerMarquee />
+      {/* <BannerMarquee /> */}
       <TopNavbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

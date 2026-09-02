@@ -1,17 +1,16 @@
 import "./WellnessGrid.css";
 
-import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { RightArrow } from "./RightArrow";
 
-export default function WellnessGrid({items}) {
+export default function WellnessGrid({ items }) {
   return (
     <section className="wellness-grid container">
       {items.map((item, index) => (
         <Link to={item.path} key={index} style={{ textDecoration: "none" }}>
           <div
             className="wellness-card"
-            key={index}
             style={{
               "--highlight-color": item.color,
               "--gradient-bg": item.gradient,
@@ -22,8 +21,9 @@ export default function WellnessGrid({items}) {
               <span>{item.highlight}</span>
             </div>
             <div className="card-rhs">
-              <img src={item.img} alt="" className="img-default" />
-              <img src={item.imgHover} alt="" className="img-hover" />
+              <div className="logo-frame">
+                <img src={item.img} alt={`${item.text}${item.highlight}`} />
+              </div>
               <div className="arrow">
                 <RightArrow />
               </div>

@@ -3,19 +3,17 @@ import "./HeroBanner.css";
 
 const words = [
   "7Level",
-  "NeuLevel",
-  "Navkar Metals",
+  "SpeedX",
+  "Navkar Metal",
   "LRN Studio",
-  "HralhZo",
-  "ReNeu",
+  "GreenRocket TV",
 ];
 const colors = [
-  "#5c8cb5",
-  "#8a3a34",
-  "#cf9358",
-  "#ac7758",
-  "#00a76e",
+  "#2840e8",
+  "#8bb51f",
   "#7a58db",
+  "#58799e",
+  "#00a775",
 ];
 
 export default function HeroBanner() {
@@ -90,9 +88,9 @@ export default function HeroBanner() {
             })}
           </div>
         </div>
-        <span className="sub-heading">personalized to you</span>
+        <span className="sub-heading">ready to assist</span>
       </h2>
-      <p className="subtitle">Customized care starts here</p>
+      <p className="subtitle">Explore our organizations below.</p>
     </section>
   );
 }
