@@ -6,7 +6,7 @@
 }
 
 .wellness-card {
-  background-color: #faf8f2;
+  background-color: #fffdf8;
   padding: 2rem 1.5rem;
   border-radius: 1.5rem;
   height: 8.75rem;
@@ -69,7 +69,7 @@
   justify-content: center;
   border-radius: 1rem;
   transition: background-color 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.68);
+  background-color: rgba(0, 0, 0, 0.42);
 }
 
 .logo-frame img {
@@ -86,21 +86,20 @@
   max-height: 72%;
 }
 
-.wellness-card .logo-frame.logo-dark,
-.wellness-card:hover .logo-frame.logo-dark {
-  background-color: #000;
-}
-
 .wellness-card .logo-frame.logo-navkar {
-  background-color: rgba(250, 248, 242, 0.92);
+  background-color: #e2ddd2;
 }
 
 .wellness-card:hover .logo-frame {
   background-color: rgba(0, 0, 0, 0.68);
 }
 
+.wellness-card:hover .logo-frame.logo-dark {
+  background-color: #000;
+}
+
 .wellness-card:hover .logo-frame.logo-navkar {
-  background-color: rgba(250, 248, 242, 0.92);
+  background-color: #e2ddd2;
 }
 .wellness-card img {
   width: auto;
@@ -134,8 +133,8 @@
 @media only screen and (max-width: 40rem) {
   .wellness-grid {
     margin-bottom: 1.5rem;
-    grid-template-columns: repeat(5, minmax(15rem, 72vw));
-    overflow-x: scroll;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow-x: visible;
     gap: 0.75rem;
   }
 
@@ -145,45 +144,72 @@
 
   .wellness-card {
     padding: 1.25rem;
-    height: min(78vw, 25rem);
-    min-height: 18rem;
+    height: 12rem;
+    min-height: 0;
     border-radius: 1.5rem;
     flex-direction: column;
     align-items: stretch;
-    justify-content: space-between;
-    background: linear-gradient(var(--gradient-bg));
-    color: white;
+    justify-content: center;
+    gap: 0.75rem;
+    background: #fffdf8;
+    color: #000;
+  }
+
+  .wellness-card.card-7level-io {
+    background: #d9e6ff;
+  }
+
+  .wellness-card:hover {
+    background: #ece8de;
+  }
+
+  .wellness-card::before {
+    opacity: 0.28;
+  }
+
+  .wellness-card:hover::before {
+    opacity: 0.36;
   }
 
   .wellness-card .text {
     order: 2;
     font-size: clamp(1.25rem, 5vw, 1.75rem);
     line-height: 1.05;
+    text-align: center;
   }
 
-  .wellness-card:hover::before {
-    opacity: 0;
+  .wellness-card:hover .text {
+    color: #000;
   }
 
-  .wellness-card:hover .text,
   .wellness-card:hover .text span {
-    color: white;
+    color: var(--highlight-color);
   }
 
   .card-rhs {
     order: 1;
     width: 100%;
-    flex: 1;
+    flex: 0 0 auto;
+    height: 6.5rem;
     justify-content: center;
     gap: 0.5rem;
   }
 
   .logo-frame {
-    width: min(100%, 11rem);
-    height: auto;
-    aspect-ratio: 1;
+    width: 6.5rem;
+    height: 6.5rem;
     padding: 0.75rem;
     border-radius: 1rem;
+  }
+
+  .logo-frame:not(.logo-navkar),
+  .wellness-card:hover .logo-frame:not(.logo-navkar) {
+    background-color: rgba(0, 0, 0, 0.68);
+  }
+
+  .logo-frame.logo-dark,
+  .wellness-card:hover .logo-frame.logo-dark {
+    background-color: #000;
   }
 
   .wellness-card .arrow {

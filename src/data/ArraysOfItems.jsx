@@ -29,8 +29,8 @@ export const homeItems = [
   {
     text: "Navkar",
     highlight: " Metal",
-    color: "#7a58db",
-    gradient: "127deg, rgb(72, 50, 139) 12.55%, rgb(134, 94, 255) 84.61%",
+    color: "#4b3f9f",
+    gradient: "127deg, rgb(35, 26, 92) 12.55%, rgb(74, 59, 163) 84.61%",
     img: navkarLogo,
     logoClass: "logo-navkar",
     path: "https://navkarmetals.7level.in/",
@@ -55,9 +55,10 @@ export const homeItems = [
   {
     text: "7level",
     highlight: "-io",
-    color: "#2840e8",
-    gradient: "127deg, rgb(26, 40, 194) 12.55%, rgb(70, 91, 255) 84.61%",
+    color: "#1450d8",
+    gradient: "127deg, rgb(0, 67, 220) 12.55%, rgb(62, 145, 255) 84.61%",
     img: sevenLevelLogo,
+    cardClass: "card-7level-io",
     path: "/7level-io",
   },
 ];

@@ -10,7 +10,7 @@ export default function WellnessGrid({ items }) {
       {items.map((item, index) => (
         <Link to={item.path} key={index} style={{ textDecoration: "none" }}>
           <div
-            className="wellness-card"
+            className={`wellness-card ${item.cardClass || ""}`}
             style={{
               "--highlight-color": item.color,
               "--gradient-bg": item.gradient,
