@@ -1,47 +1,98 @@
-.development-page {
-  min-height: calc(100vh - 4.25rem);
-  background: #faf8f2;
-  display: grid;
-  place-items: center;
-  padding: 4rem 1.625rem;
+.dev-page {
+  min-height: 100svh;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  padding: 8rem 0 5rem;
 }
 
-.development-message {
-  width: min(100%, 87rem);
-  text-align: center;
+.dev-page__inner {
+  width: 100%;
 }
 
-.development-eyebrow {
-  color: #58799e;
-  font-size: 1rem;
+.dev-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
   font-weight: 600;
+  color: var(--ink-muted);
+  text-decoration: none;
+  margin-bottom: 4rem;
+  transition: color 0.2s ease;
+}
+
+.dev-back:hover {
+  color: var(--ink);
+}
+
+.dev-content {
+  max-width: 52rem;
+  margin-bottom: 3rem;
+}
+
+.dev-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
   letter-spacing: 0.08em;
-  margin-bottom: 1.25rem;
   text-transform: uppercase;
+  background: #f5f0e8;
+  color: var(--ink-faint);
+  padding: 0.35rem 0.75rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
 }
 
-.development-message h1 {
-  color: #222;
-  font-size: clamp(2.75rem, 8vw, 7rem);
-  font-weight: 400;
-  letter-spacing: -0.06em;
-  line-height: 0.98;
-  margin: 0 auto;
-  max-width: 12ch;
+.dev-cat {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
 }
 
-@media only screen and (max-width: 40rem) {
-  .development-page {
-    min-height: calc(100vh - 3.25rem);
-    padding: 2rem 1rem;
-  }
+.dev-title {
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--brand-color, var(--ink));
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
 
-  .development-eyebrow {
-    font-size: 0.875rem;
-    margin-bottom: 1rem;
-  }
+.dev-desc {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
 
-  .development-message h1 {
-    font-size: clamp(2.5rem, 13vw, 4rem);
-  }
+.dev-contact {
+  border-top: 1px solid var(--cream-dark);
+  padding-top: 2.5rem;
+}
+
+.dev-contact p {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+}
+
+.dev-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--ink);
+  text-decoration: none;
+  padding: 0.85rem 1.5rem;
+  border-radius: 100px;
+  transition: background 0.2s ease;
+}
+
+.dev-email-btn:hover {
+  background: var(--accent);
 }

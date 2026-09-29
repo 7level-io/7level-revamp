@@ -1,9 +1,3 @@
-* {
-}
 body {
-  font-family: "Sofia Pro";
-  background-color: #faf8f2;
+  background-color: var(--cream);
 }
-
-
-/* #FAF8F2 Banner color */

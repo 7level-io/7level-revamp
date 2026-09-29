@@ -1,29 +1,54 @@
-import { useParams } from "react-router-dom";
-
+import { useParams, Link } from "react-router-dom";
+import { ArrowLeft, Mail } from "lucide-react";
 import "./DevelopmentPage.css";
 import NotFound from "./NotFound";
 
-const developmentBrands = {
-  "7level-io": "7level-io",
-  "lrn-studio": "LRN Studio",
+const BRANDS = {
+  "7level-io": {
+    name: "7level-io",
+    category: "Software & Digital Platforms",
+    description:
+      "The engineering arm of 7Level — building websites, software systems, and digital infrastructure.",
+    color: "#2840e8",
+  },
+  "lrn-studio": {
+    name: "LRN Studio",
+    category: "Custom Embroidery & Digitizing",
+    description:
+      "Quality embroidery and digitizing delivered with care, precision, and honest workmanship.",
+    color: "#58799e",
+  },
 };
 
-const DevelopmentPage = () => {
+export default function DevelopmentPage() {
   const { brand } = useParams();
-  const brandName = developmentBrands[brand];
+  const data = BRANDS[brand];
 
-  if (!brandName) {
-    return <NotFound />;
-  }
+  if (!data) return <NotFound />;
 
   return (
-    <main className="development-page">
-      <section className="development-message" aria-labelledby="development-title">
-        <p className="development-eyebrow">{brandName}</p>
-        <h1 id="development-title">Website under development.</h1>
-      </section>
+    <main className="dev-page">
+      <div className="container dev-page__inner">
+        <Link to="/" className="dev-back">
+          <ArrowLeft size={16} /> Back to 7Level
+        </Link>
+
+        <div className="dev-content">
+          <span className="dev-pill">Coming soon</span>
+          <p className="dev-cat">{data.category}</p>
+          <h1 className="dev-title" style={{ "--brand-color": data.color }}>
+            {data.name}
+          </h1>
+          <p className="dev-desc">{data.description}</p>
+        </div>
+
+        <div className="dev-contact">
+          <p>In the meantime, reach out directly.</p>
+          <a href="mailto:contact@7level.in" className="dev-email-btn">
+            <Mail size={16} /> contact@7level.in
+          </a>
+        </div>
+      </div>
     </main>
   );
-};
-
-export default DevelopmentPage;
+}

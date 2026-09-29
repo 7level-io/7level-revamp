@@ -1,4 +1,5 @@
 import sevenLevelLogo from "../assets/imgs/logos/7level_logo.webp";
+import sevenLevelLogoOutlined from "../assets/imgs/logos/7level_logo_outlined.png";
 import speedxLogo from "../assets/imgs/logos/speedx_logo.png";
 import navkarLogo from "../assets/imgs/logos/navkar-metal_logo.svg";
 import lrnLogo from "../assets/imgs/logos/lrn-studio_logo.jpeg";
@@ -18,48 +19,78 @@ import smootherSkinHover from "../assets/imgs/Placeholder_Smoother_Skin_Rollover
 
 export const homeItems = [
   {
+    index: "01",
     text: "Speed",
     highlight: "X",
+    category: "Clean Mobility & E-Bikes",
+    description:
+      "Affordable e-bike rentals engineered for everyday commuting and high-efficiency delivery usage.",
     color: "#8bb51f",
     gradient: "127deg, rgb(91, 125, 15) 12.55%, rgb(192, 239, 45) 84.61%",
     img: speedxLogo,
     logoClass: "logo-dark",
     path: "https://speedxrental.7level.in",
+    isExternal: true,
+    status: "Live Platform",
   },
   {
+    index: "02",
     text: "Navkar",
     highlight: " Metal",
-    color: "#4b3f9f",
+    category: "Steel & Industrial Metals",
+    description:
+      "A specialized partnership supplying premium steel pipes, structural angles, metal sheets, and fabrication hardware.",
+    color: "#7a58db",
     gradient: "127deg, rgb(35, 26, 92) 12.55%, rgb(74, 59, 163) 84.61%",
     img: navkarLogo,
     logoClass: "logo-navkar",
     path: "https://navkarmetals.7level.in/",
+    isExternal: true,
+    status: "Live Platform",
   },
   {
+    index: "03",
     text: "GreenRocket",
     highlight: " TV",
+    category: "Digital Media & Entertainment",
+    description:
+      "Dynamic digital media production, entertainment content, and creative broadcasting.",
     color: "#00a775",
     gradient: "127deg, rgb(0, 119, 78) 12.55%, rgb(0, 167, 110) 84.61%",
     img: greenRocketLogo,
     path: "https://greenrockettv.com/",
+    isExternal: true,
+    status: "Live Platform",
   },
   {
+    index: "04",
     text: "LRN",
     highlight: " Studio",
+    category: "Custom Embroidery & Digitizing",
+    description:
+      "Quality embroidery and digitizing services delivered with care, precision, and honest workmanship.",
     color: "#58799e",
     img: lrnLogo,
     logoClass: "logo-dark",
     gradient: "127deg, rgb(78, 121, 158) 12.55%, rgb(124, 184, 235) 84.61%",
     path: "/lrn-studio",
+    isExternal: false,
+    status: "In Development",
   },
   {
+    index: "05",
     text: "7level",
     highlight: "-io",
-    color: "#1450d8",
+    category: "Software & Digital Platforms",
+    description:
+      "The technology and engineering wing building modern websites, custom software, and digital infrastructure.",
+    color: "#2840e8",
     gradient: "127deg, rgb(0, 67, 220) 12.55%, rgb(62, 145, 255) 84.61%",
-    img: sevenLevelLogo,
+    img: sevenLevelLogoOutlined,
     cardClass: "card-7level-io",
     path: "/7level-io",
+    isExternal: false,
+    status: "In Development",
   },
 ];
 

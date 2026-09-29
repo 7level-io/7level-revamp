@@ -1,219 +1,212 @@
-.wellness-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  gap: 0.25rem;
-  margin-bottom: 2.5rem;
+.venture-section {
+  background: var(--cream);
+  padding: 7rem 0;
 }
 
-.wellness-card {
-  background-color: #f1ece2;
-  border: 1px solid rgba(82, 67, 42, 0.16);
-  padding: 2rem 1.5rem;
-  border-radius: 1.5rem;
-  height: 8.75rem;
+/* Section header */
+.vg-header {
+  margin-bottom: 4rem;
+}
+
+.vg-header-overflow {
+  overflow: hidden;
+}
+
+.vg-header-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+}
+
+.vg-header-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+/* Grid */
+.venture-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.venture-card-link {
+  text-decoration: none;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+}
+
+/* Card */
+.venture-card {
+  background: var(--white);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
   position: relative;
   overflow: hidden;
-  transition: background-color 0.4s ease, color 0.3s ease;
   cursor: pointer;
-  color: #000;
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
 }
 
-.wellness-card::before {
-  content: "";
+.venture-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(13, 13, 13, 0.1);
+}
+
+.venture-card--dev {
+  opacity: 0.72;
+}
+
+/* Accent bar */
+.venture-card__accent {
   position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: linear-gradient(var(--gradient-bg));
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  border-radius: inherit;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--brand-color, var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out);
 }
 
-.wellness-card:hover::before {
-  opacity: 1;
+.venture-card:hover .venture-card__accent {
+  transform: scaleX(1);
 }
 
-.wellness-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-.wellness-card .text {
-  font-size: 1.375rem;
-  font-weight: 400;
-  transition: color 0.2s ease-in-out;
-}
-
-.wellness-card .text span {
-  color: var(--highlight-color);
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.card-rhs {
+/* Card top row */
+.venture-card__top {
   display: flex;
-  align-items: center;
-  position: relative;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.logo-frame {
-  width: 7rem;
-  height: 7rem;
-  padding: 0.75rem;
-  box-sizing: border-box;
+.venture-card__logo {
+  width: 3.25rem;
+  height: 3.25rem;
+  background: #f0ece4;
+  border-radius: 0.65rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 1rem;
-  transition: background-color 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.42);
+  padding: 0.5rem;
+  flex-shrink: 0;
 }
 
-.logo-frame img {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+.venture-card__logo img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
-.logo-frame.logo-navkar img {
-  max-width: 72%;
-  max-height: 72%;
-}
-
-.wellness-card .logo-frame.logo-navkar {
-  background-color: #e2ddd2;
-}
-
-.wellness-card:hover .logo-frame {
-  background-color: rgba(0, 0, 0, 0.68);
-}
-
-.wellness-card:hover .logo-frame.logo-dark {
-  background-color: #000;
-}
-
-.wellness-card:hover .logo-frame.logo-navkar {
-  background-color: #e2ddd2;
-}
-.wellness-card img {
-  width: auto;
-}
-
-.wellness-card .arrow {
-  background: #000;
-  color: white;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  padding: 6px;
-  display: flex;
-  justify-content: center;
+/* Status chip */
+.venture-card__status {
+  display: inline-flex;
   align-items: center;
-  font-size: 0px;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 100px;
 }
 
-.wellness-card:hover {
-  background: linear-gradient(var(--gradient-bg));
+.status--live {
+  background: #edfaf2;
+  color: #1a9f52;
 }
 
-.wellness-card:hover .text {
-  color: rgba(255, 255, 255, 0.42);
+.status--dev {
+  background: #f5f0e8;
+  color: var(--ink-faint);
 }
 
-.wellness-card:hover .text span {
-  color: white;
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #1a9f52;
+  flex-shrink: 0;
 }
 
-@media only screen and (max-width: 40rem) {
-  .wellness-grid {
-    margin-bottom: 1.5rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    overflow-x: visible;
-    gap: 0.75rem;
+/* Card body */
+.venture-card__body {
+  flex: 1;
+}
+
+.venture-card__cat {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.5rem;
+}
+
+.venture-card__name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.venture-card__name span {
+  color: var(--brand-color, var(--accent));
+}
+
+.venture-card__desc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+/* Card footer */
+.venture-card__footer {
+  border-top: 1px solid #f0ece4;
+  padding-top: 1rem;
+}
+
+.venture-card__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+}
+
+.venture-card:hover .venture-card__action {
+  color: var(--brand-color, var(--accent));
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .venture-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .venture-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
-  .wellness-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .wellness-card {
-    padding: 1.25rem;
-    height: 12rem;
-    min-height: 0;
-    border-radius: 1.5rem;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    gap: 0.75rem;
-    background: #f1ece2;
-    color: #000;
-  }
-
-  .wellness-card.card-7level-io {
-    background: #d9e6ff;
-  }
-
-  .wellness-card:hover {
-    background: #ece8de;
-  }
-
-  .wellness-card::before {
-    opacity: 0.28;
-  }
-
-  .wellness-card:hover::before {
-    opacity: 0.36;
-  }
-
-  .wellness-card .text {
-    order: 2;
-    font-size: clamp(1.25rem, 5vw, 1.75rem);
-    line-height: 1.05;
-    text-align: center;
-  }
-
-  .wellness-card:hover .text {
-    color: #000;
-  }
-
-  .wellness-card:hover .text span {
-    color: var(--highlight-color);
-  }
-
-  .card-rhs {
-    order: 1;
-    width: 100%;
-    flex: 0 0 auto;
-    height: 6.5rem;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  .logo-frame {
-    width: 6.5rem;
-    height: 6.5rem;
-    padding: 0.75rem;
-    border-radius: 1rem;
-  }
-
-  .logo-frame:not(.logo-navkar),
-  .wellness-card:hover .logo-frame:not(.logo-navkar) {
-    background-color: rgba(0, 0, 0, 0.68);
-  }
-
-  .logo-frame.logo-dark,
-  .wellness-card:hover .logo-frame.logo-dark {
-    background-color: #000;
-  }
-
-  .wellness-card .arrow {
-    display: none;
+  .venture-section {
+    padding: 5rem 0;
   }
 }

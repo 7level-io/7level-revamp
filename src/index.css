@@ -1,19 +1,62 @@
-* {
+/* ─── Design Tokens ─── */
+:root {
+  --cream: #f2ece0;
+  --cream-dark: #e8e0d0;
+  --ink: #0d0d0d;
+  --ink-muted: #4a4a4a;
+  --ink-faint: #9a9a9a;
+  --accent: #2840e8;
+  --accent-light: #4a5ff0;
+  --white: #ffffff;
+  --font-display: "Sofia Sans", sans-serif;
+  --font-body: "Sofia Sans", sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
   margin: 0;
   padding: 0;
-  font-family: "Sofia Pro";
   box-sizing: border-box;
 }
 
-section.container {
-  max-width: 87rem;
-  padding: 0 1.625rem;
-  margin-left: auto;
-  margin-right: auto;
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
-@media only screen and (max-width: 40rem) {
-  section.container {
-    padding: 0 1rem;
+body {
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── Layout Utilities ─── */
+.container {
+  width: 100%;
+  max-width: 87rem;
+  padding: 0 2.5rem;
+  margin: 0 auto;
+}
+
+/* Shared visibility state for GSAP */
+.gs-fade-up {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.gs-fade-in {
+  opacity: 0;
+}
+
+.gs-clip-reveal {
+  clip-path: inset(100% 0 0 0);
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1.25rem;
   }
 }
