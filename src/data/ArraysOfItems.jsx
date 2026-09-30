@@ -1,4 +1,3 @@
-import sevenLevelLogo from "../assets/imgs/logos/7level_logo.webp";
 import sevenLevelLogoOutlined from "../assets/imgs/logos/7level_logo_outlined.png";
 import speedxLogo from "../assets/imgs/logos/speedx_logo.png";
 import navkarLogo from "../assets/imgs/logos/navkar-metal_logo.svg";
@@ -75,7 +74,7 @@ export const homeItems = [
     gradient: "127deg, rgb(78, 121, 158) 12.55%, rgb(124, 184, 235) 84.61%",
     path: "/lrn-studio",
     isExternal: false,
-    status: "In Development",
+    status: "Live Studio",
   },
   {
     index: "05",

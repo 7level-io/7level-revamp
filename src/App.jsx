@@ -8,6 +8,7 @@ import TopNavbar from "./components/TopNavbar";
 import DevelopmentPage from "./pages/DevelopmentPage";
 import HomePage from "./pages/HomePage";
 import KaroHardwarePage from "./pages/KaroHardwarePage";
+import LrnStudioPage from "./pages/LrnStudioPage";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <TopNavbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/lrn-studio" element={<LrnStudioPage />} />
         <Route path="/:brand" element={<DevelopmentPage />} />
         {/* <Route path="/" element={<KaroHardwarePage />} /> */}
         <Route path="*" element={<NotFound />} />
