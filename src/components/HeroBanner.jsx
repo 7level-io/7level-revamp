@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import sevenLevelLogo from "../assets/imgs/logos/7level_logo.webp";
 import "./HeroBanner.css";
 
 const BRANDS = ["7Level", "SpeedX", "Navkar Metal", "LRN Studio", "GreenRocket"];
@@ -116,8 +117,13 @@ export default function HeroBanner() {
         </div>
       </div>
 
-      {/* Ambient decorative number */}
-      <span className="hero-ambient-num" aria-hidden>5</span>
+      {/* Ambient decorative logo */}
+      <img
+        src={sevenLevelLogo}
+        alt=""
+        aria-hidden="true"
+        className="hero-ambient-logo"
+      />
     </section>
   );
 }

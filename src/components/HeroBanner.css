@@ -120,18 +120,19 @@
   transform: translateY(-2px);
 }
 
-/* Ambient number (decorative) */
-.hero-ambient-num {
+/* Ambient logo (decorative) */
+.hero-ambient-logo {
   position: absolute;
-  right: -0.05em;
-  bottom: -0.1em;
-  font-size: clamp(12rem, 26vw, 24rem);
-  font-weight: 900;
-  letter-spacing: -0.05em;
-  color: rgba(255, 255, 255, 0.03);
+  right: -2vw;
+  bottom: -3vw;
+  width: clamp(14rem, 28vw, 26rem);
+  height: clamp(14rem, 28vw, 26rem);
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.035;
   user-select: none;
   pointer-events: none;
-  line-height: 1;
+  z-index: 0;
 }
 
 @media (max-width: 640px) {
