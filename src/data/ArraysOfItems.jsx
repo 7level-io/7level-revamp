@@ -1,5 +1,5 @@
 import sevenLevelLogoOutlined from "../assets/imgs/logos/7level_logo_outlined.png";
-import speedxLogo from "../assets/imgs/logos/speedx_logo.png";
+import speedxLogoOutlined from "../assets/imgs/logos/speedxlogo-outlined.png";
 import navkarLogo from "../assets/imgs/logos/navkar-metal_logo.svg";
 import lrnLogo from "../assets/imgs/logos/lrn-studio_logo.jpeg";
 import greenRocketLogo from "../assets/imgs/logos/greenrockettv_logo.png";
@@ -26,7 +26,7 @@ export const homeItems = [
       "Affordable e-bike rentals engineered for everyday commuting and high-efficiency delivery usage.",
     color: "#8bb51f",
     gradient: "127deg, rgb(91, 125, 15) 12.55%, rgb(192, 239, 45) 84.61%",
-    img: speedxLogo,
+    img: speedxLogoOutlined,
     logoClass: "logo-dark",
     path: "https://speedxrental.7level.in",
     isExternal: true,
