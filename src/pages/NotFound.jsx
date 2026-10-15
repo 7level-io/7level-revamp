@@ -3,7 +3,7 @@ import { ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <main style={{ minHeight: "100svh", background: "var(--cream)", display: "flex", alignItems: "center", padding: "8rem 0" }}>
+    <main data-nav-theme="light" style={{ minHeight: "100svh", background: "var(--cream)", display: "flex", alignItems: "center", padding: "8rem 0" }}>
       <div className="container">
         <Link to="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", fontSize: "0.85rem", fontWeight: 600, color: "var(--ink-muted)", textDecoration: "none", marginBottom: "3rem" }}>
           <ArrowLeft size={16} /> Back home

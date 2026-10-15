@@ -10,44 +10,80 @@
     padding 0.35s var(--ease-out);
 }
 
-/* Over dark hero — transparent, white text */
-.navbar--hero {
+/* Over dark background — transparent, white text & logo */
+.navbar--hero,
+.navbar--dark {
   background: transparent;
 }
 
-.navbar--hero .navbar__logo-text {
+.navbar--hero .navbar__logo-text,
+.navbar--dark .navbar__logo-text {
   color: var(--white);
 }
 
-.navbar--hero .navbar__logo-img {
+.navbar--hero .navbar__logo-img,
+.navbar--dark .navbar__logo-img {
   filter: brightness(0) invert(1);
 }
 
-.navbar--scrolled .navbar__logo-img {
+.navbar--scrolled .navbar__logo-img,
+.navbar--light .navbar__logo-img {
   filter: none;
 }
 
-.navbar--hero .navbar__links a {
+.navbar--hero .navbar__links a,
+.navbar--dark .navbar__links a {
   color: rgba(255, 255, 255, 0.65);
 }
 
-.navbar--hero .navbar__links a:hover {
+.navbar--hero .navbar__links a:hover,
+.navbar--dark .navbar__links a:hover {
   color: var(--white);
 }
 
-.navbar--hero .navbar__cta {
+.navbar--hero .navbar__cta,
+.navbar--dark .navbar__cta {
   background: rgba(255, 255, 255, 0.12);
   color: var(--white);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.navbar--hero .navbar__cta:hover {
+.navbar--hero .navbar__cta:hover,
+.navbar--dark .navbar__cta:hover {
   background: var(--accent);
   border-color: var(--accent);
 }
 
-.navbar--hero .navbar__burger span {
+.navbar--hero .navbar__burger span,
+.navbar--dark .navbar__burger span {
   background: var(--white);
+}
+
+/* Light background (cream/white pages like /lrn-studio, /7level-io before scroll) */
+.navbar--light {
+  background: transparent;
+}
+
+.navbar--light .navbar__logo-text {
+  color: var(--ink);
+}
+
+.navbar--light .navbar__links a {
+  color: var(--ink-muted);
+}
+
+.navbar--light .navbar__links a:hover {
+  color: var(--ink);
+}
+
+.navbar--light .navbar__cta {
+  background: var(--ink);
+  color: var(--white);
+  border-color: transparent;
+}
+
+.navbar--light .navbar__burger span {
+  background: var(--ink);
 }
 
 /* Scrolled — glass cream bg, dark text */
@@ -80,6 +116,7 @@
   height: 28px;
   object-fit: contain;
   flex-shrink: 0;
+  transition: filter 0.3s ease;
 }
 
 .navbar__logo-text {
@@ -129,7 +166,8 @@
   border: 1px solid transparent;
 }
 
-.navbar--scrolled .navbar__cta:hover {
+.navbar--scrolled .navbar__cta:hover,
+.navbar--light .navbar__cta:hover {
   background: var(--accent);
   transform: translateY(-1px);
 }

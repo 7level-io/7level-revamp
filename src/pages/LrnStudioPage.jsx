@@ -34,7 +34,7 @@ export default function LrnStudioPage() {
   }, []);
 
   return (
-    <div className="lrn-page">
+    <div className="lrn-page" data-nav-theme="light">
       {/* ─── Top Utility Sub-Bar ─── */}
       <nav className="lrn-subnav" aria-label="Breadcrumb navigation">
         <div className="container lrn-subnav__inner">

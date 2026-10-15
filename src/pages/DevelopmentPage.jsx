@@ -27,7 +27,7 @@ export default function DevelopmentPage() {
   if (!data) return <NotFound />;
 
   return (
-    <main className="dev-page">
+    <main className="dev-page" data-nav-theme="light">
       <div className="container dev-page__inner">
         <Link to="/" className="dev-back">
           <ArrowLeft size={16} /> Back to 7Level

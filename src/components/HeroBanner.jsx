@@ -75,7 +75,7 @@ export default function HeroBanner() {
   }, [index, total, itemHeight]);
 
   return (
-    <section className="hero" ref={heroRef}>
+    <section className="hero" ref={heroRef} data-nav-theme="dark">
       <div className="hero__inner container">
         {/* Headline */}
         <h1 className="hero-headline" ref={headlineRef}>
