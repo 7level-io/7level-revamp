@@ -9,6 +9,7 @@ import DevelopmentPage from "./pages/DevelopmentPage";
 import HomePage from "./pages/HomePage";
 import KaroHardwarePage from "./pages/KaroHardwarePage";
 import LrnStudioPage from "./pages/LrnStudioPage";
+import SevenLevelIoPage from "./pages/SevenLevelIoPage";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/lrn-studio" element={<LrnStudioPage />} />
+        <Route path="/7level-io" element={<SevenLevelIoPage />} />
         <Route path="/:brand" element={<DevelopmentPage />} />
         {/* <Route path="/" element={<KaroHardwarePage />} /> */}
         <Route path="*" element={<NotFound />} />

@@ -89,7 +89,7 @@ export const homeItems = [
     cardClass: "card-7level-io",
     path: "/7level-io",
     isExternal: false,
-    status: "In Development",
+    status: "Live Platform",
   },
 ];
 
