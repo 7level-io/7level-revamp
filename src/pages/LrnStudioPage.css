@@ -20,15 +20,11 @@
 
 /* ─── Subnav / Breadcrumb ─── */
 .lrn-subnav {
-  position: sticky;
-  top: 4.5rem;
-  z-index: 100;
-  background: rgba(242, 236, 224, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  background: transparent;
   border-bottom: 1px solid var(--cream-dark);
   padding: 0.75rem 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .lrn-subnav__inner {
@@ -93,7 +89,8 @@
 
 /* ─── 1. Header & Studio Intro ─── */
 .lrn-hero {
-  padding: 1.5rem 0 4rem;
+  padding: 0.75rem 0 4rem;
+  scroll-margin-top: 5rem;
 }
 
 .lrn-meta-badge {
@@ -347,6 +344,7 @@
 /* ─── Shared Section Base ─── */
 .lrn-section {
   padding: 5rem 0;
+  scroll-margin-top: 5rem;
 }
 
 .lrn-section__label {
@@ -890,10 +888,6 @@
 }
 
 @media (max-width: 768px) {
-  .lrn-subnav {
-    top: 4rem;
-  }
-
   .lrn-subnav__pills {
     display: none;
   }
