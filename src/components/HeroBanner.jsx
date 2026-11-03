@@ -123,6 +123,10 @@ export default function HeroBanner() {
         alt=""
         aria-hidden="true"
         className="hero-ambient-logo"
+        width="600"
+        height="600"
+        fetchpriority="high"
+        decoding="async"
       />
     </section>
   );

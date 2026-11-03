@@ -1,38 +1,28 @@
 import "./App.css";
-import "./assets/styles/SofiaPro.css";
-
+import { lazy, Suspense } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-
-import BannerMarquee from "./components/BannerMarquee";
 import TopNavbar from "./components/TopNavbar";
-import DevelopmentPage from "./pages/DevelopmentPage";
-import HomePage from "./pages/HomePage";
-import KaroHardwarePage from "./pages/KaroHardwarePage";
-import LrnStudioPage from "./pages/LrnStudioPage";
-import SevenLevelIoPage from "./pages/SevenLevelIoPage";
-import NotFound from "./pages/NotFound";
+
+// Lazy load route pages for optimal initial bundle size and zero unused JS
+const HomePage = lazy(() => import("./pages/HomePage"));
+const LrnStudioPage = lazy(() => import("./pages/LrnStudioPage"));
+const SevenLevelIoPage = lazy(() => import("./pages/SevenLevelIoPage"));
+const DevelopmentPage = lazy(() => import("./pages/DevelopmentPage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
-  // const host = window.location.hostname;
-
   return (
     <Router>
-      {/* <BannerMarquee /> */}
       <TopNavbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/lrn-studio" element={<LrnStudioPage />} />
-        <Route path="/7level-io" element={<SevenLevelIoPage />} />
-        <Route path="/:brand" element={<DevelopmentPage />} />
-        {/* <Route path="/" element={<KaroHardwarePage />} /> */}
-        <Route path="*" element={<NotFound />} />
-
-        {/* <Route path="/regrow-hair" element={<RegrowHair />} />
-          <Route path="/last-longer" element={<LastLonger />} />
-          <Route path="/better-sex" element={<BetterSex />} />
-          <Route path="/tackle-anxiety" element={<TackleAnxiety />} />
-          <Route path="/smoother-skin" element={<SmootherSkin />} /> */}
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/lrn-studio" element={<LrnStudioPage />} />
+          <Route path="/7level-io" element={<SevenLevelIoPage />} />
+          <Route path="/:brand" element={<DevelopmentPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </Router>
   );
 }

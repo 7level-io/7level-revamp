@@ -9,73 +9,43 @@ export default function TopNavbar() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  // Default to dark background only on the home page root which has the dark HeroBanner
   const [isDarkBg, setIsDarkBg] = useState(() => location.pathname === "/");
 
   const navRef = useRef(null);
   const stripRef = useRef(null);
+  const marqueeMetricsRef = useRef({ top: 0, height: 0, ready: false });
 
-  // Dynamic contrast detection: inspects what is physically underneath the navbar
-  const detectIsDarkBackground = useCallback(() => {
-    // When scrolled, the navbar has an opaque/frosted cream background (light)
-    if (window.scrollY > 60) {
-      return false;
+  // Update cached metrics for marquee strip positioning on load/resize (prevents forced reflow during scroll)
+  const measureMarquee = useCallback(() => {
+    if (location.pathname !== "/") {
+      marqueeMetricsRef.current.ready = false;
+      return;
     }
-
-    const nav = navRef.current;
-    if (!nav) {
-      return location.pathname === "/";
+    const marquee = document.querySelector(".marquee-strip");
+    if (marquee) {
+      const rect = marquee.getBoundingClientRect();
+      marqueeMetricsRef.current = {
+        top: rect.top + window.scrollY,
+        height: rect.height,
+        ready: true,
+      };
     }
-
-    const sampleX = Math.min(Math.max(window.innerWidth / 2, 50), window.innerWidth - 50);
-    const sampleY = 35; // Center point of the navbar
-
-    let elements = [];
-    if (typeof document.elementsFromPoint === "function") {
-      elements = document.elementsFromPoint(sampleX, sampleY);
-    }
-
-    for (const el of elements) {
-      if (nav.contains(el)) continue;
-
-      // 1. Check explicit data-theme or data-nav-theme attribute
-      const explicitTheme = el.closest("[data-theme], [data-nav-theme]");
-      if (explicitTheme) {
-        const theme =
-          explicitTheme.getAttribute("data-theme") ||
-          explicitTheme.getAttribute("data-nav-theme");
-        if (theme === "dark") return true;
-        if (theme === "light") return false;
-      }
-
-      // 2. Climb DOM tree to find effective background color
-      let curr = el;
-      while (curr && curr !== document.documentElement) {
-        const style = window.getComputedStyle(curr);
-        const bg = style.backgroundColor;
-        if (bg && bg !== "transparent" && bg !== "rgba(0, 0, 0, 0)") {
-          const match = bg.match(
-            /rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/
-          );
-          if (match) {
-            const a = match[4] !== undefined ? parseFloat(match[4]) : 1;
-            if (a > 0.4) {
-              const r = parseInt(match[1], 10);
-              const g = parseInt(match[2], 10);
-              const b = parseInt(match[3], 10);
-              // ITU-R BT.709 perceived luminance
-              const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-              return luminance < 140; // True if dark background, false if light
-            }
-          }
-        }
-        curr = curr.parentElement;
-      }
-    }
-
-    // Default route-based fallback: "/" has dark hero, all others have cream
-    return location.pathname === "/";
   }, [location.pathname]);
+
+  // Keep theme in sync with route without DOM layout thrashing
+  useEffect(() => {
+    setIsDarkBg(location.pathname === "/");
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    measureMarquee();
+    const handleResize = () => {
+      measureMarquee();
+    };
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => window.removeEventListener("resize", handleResize);
+  }, [measureMarquee]);
 
   useEffect(() => {
     let ticking = false;
@@ -85,25 +55,26 @@ export default function TopNavbar() {
       const isScrolledNow = scrollY > 60;
       setScrolled(isScrolledNow);
 
-      const darkNow = detectIsDarkBackground();
-      setIsDarkBg(darkNow);
+      // Contrast: Home page is dark at top (<60px), light elsewhere/scrolled
+      if (location.pathname === "/") {
+        setIsDarkBg(!isScrolledNow);
+      } else {
+        setIsDarkBg(false);
+      }
 
-      const marquee = document.querySelector(".marquee-strip");
+      // Sticky Marquee Accent Strip calculation using pre-cached metrics (zero reflow)
       const strip = stripRef.current;
       const nav = navRef.current;
+      const { top: marqueeTop, height: marqueeHeight, ready } = marqueeMetricsRef.current;
 
-      if (marquee && strip && nav && !menuOpen) {
-        const marqueeRect = marquee.getBoundingClientRect();
-        const navRect = nav.getBoundingClientRect();
+      if (ready && strip && nav && !menuOpen && location.pathname === "/") {
+        const navHeight = 70; // Fixed navbar height
+        const marqueeBottom = marqueeTop + marqueeHeight;
+        const currentNavBottom = scrollY + navHeight;
+        const dist = marqueeBottom - currentNavBottom;
         const STRIP_HEIGHT = 5;
 
-        // Distance from navbar bottom to marquee bottom
-        const dist = marqueeRect.bottom - navRect.bottom;
-
-        // As the marquee approaches from below (within 60px of the navbar bottom):
-        // The strip comes up from below in lockstep with the scroll, then locks
-        // to the navbar at translateY(0) when it reaches the bottom of the navbar.
-        if (dist <= 60) {
+        if (dist <= 60 && dist >= -100) {
           const yOffset = Math.max(0, dist - STRIP_HEIGHT);
           strip.style.transform = `translateY(${yOffset}px)`;
           strip.style.opacity = "1";
@@ -128,25 +99,14 @@ export default function TopNavbar() {
       }
     };
 
-    // Initial evaluation immediately and on next animation frame
+    // Initial check
     updateNavbar();
-    const rafId = requestAnimationFrame(updateNavbar);
-
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll, { passive: true });
 
     return () => {
-      cancelAnimationFrame(rafId);
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
     };
-  }, [location, menuOpen, detectIsDarkBackground]);
-
-  useEffect(() => {
-    setMenuOpen(false);
-    // When route changes, sync initial dark background expectation immediately
-    setIsDarkBg(location.pathname === "/");
-  }, [location]);
+  }, [location.pathname, menuOpen]);
 
   // Dark mode active when background is dark and not scrolled into cream glass
   const isDark = isDarkBg && !scrolled;
@@ -169,14 +129,16 @@ export default function TopNavbar() {
             src={isDark ? sevenLevelLogo : sevenLevelLogoOutlined}
             alt="7Level logo"
             className="navbar__logo-img"
+            width="32"
+            height="32"
+            fetchpriority="high"
+            decoding="async"
           />
           <span className="navbar__logo-text">7Level</span>
         </Link>
 
         <nav className="navbar__links">
           <a href="/#ventures">Ventures</a>
-          {/* <a href="/#about">About</a> */}
-          {/* <a href="/#contact">Contact</a> */}
         </nav>
 
         <a href="mailto:contact@7level.in" className="navbar__cta">
@@ -206,8 +168,6 @@ export default function TopNavbar() {
           <a href="/#ventures" onClick={() => setMenuOpen(false)}>
             Ventures
           </a>
-          {/* <a href="/#about" onClick={() => setMenuOpen(false)}>About</a> */}
-          {/* <a href="/#contact" onClick={() => setMenuOpen(false)}>Contact</a> */}
           <a
             href="mailto:contact@7level.in"
             className="drawer__cta"

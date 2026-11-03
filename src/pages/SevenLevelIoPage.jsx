@@ -6,6 +6,7 @@ import {
   Globe,
   Mail,
   Layers,
+  Contact,
 } from "lucide-react";
 import "./SevenLevelIoPage.css";
 
@@ -23,6 +24,7 @@ const PRODUCTS = [
     domain: "speedxrental.7level.in",
     url: "https://speedxrental.7level.in",
     category: "Electric Bike Rentals",
+    type: "7Level Product",
     description: "Platform for booking and managing electric two-wheeler rentals.",
     logo: speedxLogoOutlined,
     accentColor: "#8bb51f",
@@ -33,6 +35,7 @@ const PRODUCTS = [
     domain: "clustr-collab.7level.in",
     url: "https://clustr-collab.7level.in",
     category: "Team Collaboration",
+    type: "7Level Product",
     description: "Workspace for task management, team coordination, and project tracking.",
     logo: null,
     accentColor: "#2840e8",
@@ -40,7 +43,7 @@ const PRODUCTS = [
 ];
 
 // ─── Websites ───
-// These are websites and web portals developed by 7level-io.
+// Web portals and websites developed by 7level-io for ventures and clients.
 const WEBSITES = [
   {
     id: "navkarmetals",
@@ -48,6 +51,7 @@ const WEBSITES = [
     domain: "navkarmetals.7level.in",
     url: "https://navkarmetals.7level.in/",
     category: "Steel & Industrial Metals",
+    type: "7Level Venture",
     description: "Catalog and supply portal for structural steel, pipes, and fabrication materials.",
     logo: navkarLogo,
     accentColor: "#7a58db",
@@ -58,6 +62,7 @@ const WEBSITES = [
     domain: "greenrockettv.com",
     url: "https://greenrockettv.com/",
     category: "Digital Media & Entertainment",
+    type: "7Level Venture",
     description: "Digital broadcasting platform, video productions, and media content.",
     logo: greenRocketLogo,
     accentColor: "#00a775",
@@ -68,6 +73,7 @@ const WEBSITES = [
     domain: "www.bethelministrymizoram.com",
     url: "https://www.bethelministrymizoram.com/",
     category: "Ministry & Community",
+    type: "Client Project",
     description: "Official web portal for Bethel Ministry Mizoram, publications, and outreach.",
     logo: null,
     accentColor: "#d97706",
@@ -78,6 +84,7 @@ const WEBSITES = [
     domain: "7level.in",
     url: "https://7level.in",
     category: "Holding & Ventures",
+    type: "Group Portal",
     description: "Parent company website connecting 7Level operating ventures.",
     logo: sevenLevelLogoOutlined,
     accentColor: "#2840e8",
@@ -87,8 +94,9 @@ const WEBSITES = [
     title: "Alvin",
     domain: "alvin.7level.in",
     url: "https://alvin.7level.in",
-    category: "Personal Portfolio",
-    description: "Personal website, project notes, and portfolio.",
+    category: "Digital Business Card",
+    type: "Digital Card",
+    description: "Digital business card and personal contact profile.",
     logo: null,
     accentColor: "#06b6d4",
   },
@@ -165,6 +173,10 @@ export default function SevenLevelIoPage() {
                         src={prod.logo}
                         alt={`${prod.title} logo`}
                         className="io-card__logo"
+                        loading="lazy"
+                        decoding="async"
+                        width="36"
+                        height="36"
                       />
                     ) : (
                       <Layers size={22} className="io-card__icon" />
@@ -176,7 +188,10 @@ export default function SevenLevelIoPage() {
                 </div>
 
                 <div className="io-card__body">
-                  <p className="io-card__category">{prod.category}</p>
+                  <div className="io-card__meta">
+                    <span className="io-card__category">{prod.category}</span>
+                    <span className="io-card__tag">{prod.type}</span>
+                  </div>
                   <h3 className="io-card__title">{prod.title}</h3>
                   <p className="io-card__domain">{prod.domain}</p>
                   <p className="io-card__desc">{prod.description}</p>
@@ -200,7 +215,7 @@ export default function SevenLevelIoPage() {
             <p className="io-section__label">Websites</p>
             <h2 className="io-section__title">Web Portals & Sites</h2>
             <p className="io-section__sub">
-              Web platforms built for 7Level ventures, partners, and community organizations.
+              Web platforms built for 7Level group ventures and external client work.
             </p>
           </div>
 
@@ -221,7 +236,13 @@ export default function SevenLevelIoPage() {
                         src={site.logo}
                         alt={`${site.title} logo`}
                         className="io-card__logo"
+                        loading="lazy"
+                        decoding="async"
+                        width="36"
+                        height="36"
                       />
+                    ) : site.id === "alvin" ? (
+                      <Contact size={22} className="io-card__icon" />
                     ) : (
                       <Globe size={22} className="io-card__icon" />
                     )}
@@ -232,7 +253,16 @@ export default function SevenLevelIoPage() {
                 </div>
 
                 <div className="io-card__body">
-                  <p className="io-card__category">{site.category}</p>
+                  <div className="io-card__meta">
+                    <span className="io-card__category">{site.category}</span>
+                    <span
+                      className={`io-card__tag ${
+                        site.type === "Client Project" ? "io-card__tag--client" : ""
+                      }`}
+                    >
+                      {site.type}
+                    </span>
+                  </div>
                   <h3 className="io-card__title">{site.title}</h3>
                   <p className="io-card__domain">{site.domain}</p>
                   <p className="io-card__desc">{site.description}</p>

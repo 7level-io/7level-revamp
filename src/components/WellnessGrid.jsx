@@ -76,7 +76,14 @@ export default function VentureGrid({ items }) {
               >
                 <div className="venture-card__top">
                   <div className="venture-card__logo">
-                    <img src={item.img} alt={`${item.text}${item.highlight}`} />
+                    <img
+                      src={item.img}
+                      alt={`${item.text}${item.highlight}`}
+                      loading="lazy"
+                      decoding="async"
+                      width="48"
+                      height="48"
+                    />
                   </div>
                   <span className={`venture-card__status ${item.status === "Live Platform" ? "status--live" : "status--dev"}`}>
                     {item.status === "Live Platform" ? (

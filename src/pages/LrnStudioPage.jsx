@@ -124,6 +124,10 @@ export default function LrnStudioPage() {
                 src={heroMachineImg}
                 alt="Multi-needle industrial embroidery machine closely tracking a complex design"
                 className="lrn-media-frame__image"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="675"
               />
               <div className="lrn-media-frame__overlay">
                 <div className="lrn-overlay-badge">
@@ -317,6 +321,10 @@ export default function LrnStudioPage() {
                   src={workInstitutionalImg}
                   alt="Institutional & Corporate Identity embroidery badge"
                   className="lrn-work-card__img"
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="400"
                 />
                 <div className="lrn-work-card__chip">LEDGER ITEM // 01</div>
               </div>
@@ -343,6 +351,10 @@ export default function LrnStudioPage() {
                   src={workCreativeImg}
                   alt="Creative & Pop-Culture Compositions high stitch count anime embroidery patch"
                   className="lrn-work-card__img"
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="400"
                 />
                 <div className="lrn-work-card__chip">LEDGER ITEM // 02</div>
               </div>

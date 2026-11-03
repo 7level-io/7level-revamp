@@ -3,18 +3,6 @@ import speedxLogoOutlined from "../assets/imgs/logos/speedxlogo-outlined.png";
 import navkarLogo from "../assets/imgs/logos/navkar-metal_logo.svg";
 import lrnLogo from "../assets/imgs/logos/lrn-studio_logo.jpeg";
 import greenRocketLogo from "../assets/imgs/logos/greenrockettv_logo.png";
-import weightLoss from "../assets/imgs/Placeholder_Weight_Loss_Offering_Default.png";
-import weightLossHover from "../assets/imgs/Placeholder_Weight_Loss_Offering_Rollover.png";
-import regrowHair from "../assets/imgs/Placeholder_Regrow_Hair_Default.png";
-import regrowHairHover from "../assets/imgs/Placeholder_Regrow_Hair_Rollover.png";
-import lastLonger from "../assets/imgs/Placeholder_Last_Longer_Default.png";
-import lastLongerHover from "../assets/imgs/Placeholder_Last_Longer_Rollover.png";
-import betterSex from "../assets/imgs/Placeholder_Better_Sex_Default.png";
-import betterSexHover from "../assets/imgs/Placeholder_Better_Sex_Rollover.png";
-import tackleAnxiety from "../assets/imgs/Placeholder_Tackle_Anxiety_Default.png";
-import tackleAnxietyHover from "../assets/imgs/Placeholder_Tackle_Anxiety_Rollover.png";
-import smootherSkin from "../assets/imgs/Placeholder_Smoother_Skin_Default.png";
-import smootherSkinHover from "../assets/imgs/Placeholder_Smoother_Skin_Rollover.png";
 
 export const homeItems = [
   {
@@ -36,27 +24,28 @@ export const homeItems = [
     index: "02",
     text: "Navkar",
     highlight: " Metal",
-    category: "Steel & Industrial Metals",
+    category: "Industrial Steel & Fabrication",
     description:
-      "A specialized partnership supplying premium steel pipes, structural angles, metal sheets, and fabrication hardware.",
+      "Direct distribution of structural steel, industrial pipes, and raw materials for building projects.",
     color: "#7a58db",
-    gradient: "127deg, rgb(35, 26, 92) 12.55%, rgb(74, 59, 163) 84.61%",
+    gradient: "127deg, rgb(72, 50, 139) 12.55%, rgb(134, 94, 255) 84.61%",
     img: navkarLogo,
-    logoClass: "logo-navkar",
+    logoClass: "logo-dark",
     path: "https://navkarmetals.7level.in/",
     isExternal: true,
     status: "Live Platform",
   },
   {
     index: "03",
-    text: "GreenRocket",
-    highlight: " TV",
-    category: "Digital Media & Entertainment",
+    text: "Green",
+    highlight: "Rocket TV",
+    category: "Broadcast Media & Video",
     description:
-      "Dynamic digital media production, entertainment content, and creative broadcasting.",
+      "Commercial video production, digital broadcasts, and brand media delivered with full-service creative.",
     color: "#00a775",
     gradient: "127deg, rgb(0, 119, 78) 12.55%, rgb(0, 167, 110) 84.61%",
     img: greenRocketLogo,
+    logoClass: "logo-greenrocket",
     path: "https://greenrockettv.com/",
     isExternal: true,
     status: "Live Platform",
@@ -67,14 +56,14 @@ export const homeItems = [
     highlight: " Studio",
     category: "Custom Embroidery & Digitizing",
     description:
-      "Quality embroidery and digitizing services delivered with care, precision, and honest workmanship.",
+      "Precision embroidery digitizing, uniform crests, custom patches, and bulk thread production.",
     color: "#58799e",
-    img: lrnLogo,
-    logoClass: "logo-dark",
     gradient: "127deg, rgb(78, 121, 158) 12.55%, rgb(124, 184, 235) 84.61%",
+    img: lrnLogo,
+    logoClass: "logo-round",
     path: "/lrn-studio",
     isExternal: false,
-    status: "Live Studio",
+    status: "Live Platform",
   },
   {
     index: "05",
@@ -82,70 +71,13 @@ export const homeItems = [
     highlight: "-io",
     category: "Software & Digital Platforms",
     description:
-      "The technology and engineering wing building modern websites, custom software, and digital infrastructure.",
+      "The engineering studio of 7Level — building web platforms, mobile software, and digital infrastructure.",
     color: "#2840e8",
-    gradient: "127deg, rgb(0, 67, 220) 12.55%, rgb(62, 145, 255) 84.61%",
+    gradient: "127deg, rgb(40, 64, 232) 12.55%, rgb(88, 112, 248) 84.61%",
     img: sevenLevelLogoOutlined,
     cardClass: "card-7level-io",
     path: "/7level-io",
     isExternal: false,
     status: "Live Platform",
-  },
-];
-
-export const karoHardwareItems = [
-  {
-    text: "u",
-    highlight: "PVC",
-    color: "#c18049",
-    gradient: "127deg, rgb(186, 118, 32) 12.55%, rgb(236, 193, 92) 84.61%",
-    img: weightLoss,
-    imgHover: weightLossHover,
-    path: "/7level-revamp/karo-hardware",
-  },
-  {
-    text: "Iron",
-    highlight: " Structure",
-    color: "#8b3d3d",
-    gradient: "127deg, rgb(119, 29, 23) 12.55%, rgb(185, 68, 59) 84.61%",
-    img: regrowHair,
-    imgHover: regrowHairHover,
-    path: "/7level-revamp/karo-hardware",
-  },
-  {
-    text: "Gypsum",
-    highlight: " Board",
-    color: "#7a58db",
-    gradient: "127deg, rgb(72, 50, 139) 12.55%, rgb(134, 94, 255) 84.61%",
-    img: lastLonger,
-    imgHover: lastLongerHover,
-    path: "/7level-revamp/karo-hardware",
-  },
-  {
-    text: "PVC",
-    highlight: " Panel",
-    color: "#58799e",
-    img: betterSex,
-    imgHover: betterSexHover,
-    gradient: "127deg, rgb(78, 121, 158) 12.55%, rgb(124, 184, 235) 84.61%",
-    path: "/7level-revamp/karo-hardware",
-  },
-  {
-    text: "Metal",
-    highlight: " Roofing",
-    color: "#00a775",
-    gradient: "127deg, rgb(0, 119, 78) 12.55%, rgb(0, 167, 110) 84.61%",
-    img: tackleAnxiety,
-    imgHover: tackleAnxietyHover,
-    path: "/7level-revamp/karo-hardware",
-  },
-  {
-    text: "Aluminium",
-    highlight: " Profile",
-    color: "#d0926a",
-    gradient: "127deg, rgb(172, 119, 88) 12.55%, rgb(255, 188, 148) 84.61%",
-    img: smootherSkin,
-    imgHover: smootherSkinHover,
-    path: "/7level-revamp/karo-hardware",
   },
 ];
